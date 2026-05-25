@@ -1,5 +1,5 @@
 /** 
-  * --------- */ 
+  * --- components/ui/View.jsx --- */ 
 const VALID_TAGS = new Set([
   "div", "section", "main", "article", "aside",
   "header", "footer", "nav", "span", "ul", "ol", "li", "p",

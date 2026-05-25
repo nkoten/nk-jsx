@@ -1,0 +1,111 @@
+/* src/constants/tipografia.css */
+
+/** 
+ * --- Como escolher o "Melhor Uso" (A Proporção Ideal)
+ *
+ * A escolha da proporção depende do tipo de projeto pessoal que você vai construir: 
+ *
+ * --- Proporção 1.200 (Minor Third): 
+ *     Ideal para painéis administrativos (dashboards), sistemas complexos ou interfaces densas. 
+ * --- Proporção 1.250 (Major Third): 
+ *     O coringa para a web. Excelente para blogs comuns, sites institucionais e e-commerce.
+ * --- Proporção 1.333 (Perfect Fourth): 
+ *     Perfeito para blogs de leitura pesada, portfólios e landing pages.
+*/
+
+:root {
+  /* ==========================================================================
+     CONFIGURAÇÃO DA PROPORÇÃO (ATIVE APENAS UMA POR PROJETO)
+     ========================================================================== */
+  /* --nk-proporcao: 1.200; */ /* Minor Third (Dashboards / Apps densos) */
+  --nk-proporcao: 1.25; /* Major Third (Coringa / Padrão Web) */
+  /* --nk-proporcao: 1.333; */ /* Perfect Fourth (Marketing / Leitura Focada) */
+
+  /* ==========================================================================
+     CÁLCULO AUTOMÁTICO DA ESCALA MODULAR
+     ========================================================================== */
+  --nk-font-base: 1rem; /* 16px básico do navegador */
+
+  /* Tamanhos menores que a base */
+  --nk-sz-sm: calc(var(--nk-font-base) / var(--nk-proporcao));
+  --nk-sz-xs: calc(var(--nk-sz-sm) / var(--nk-proporcao));
+
+  /* Tamanhos maiores que a base (Crescimento Geométrico) */
+  --nk-sz-1: var(--nk-font-base);
+  --nk-sz-2: calc(var(--nk-sz-1) * var(--nk-proporcao));
+  --nk-sz-3: calc(var(--nk-sz-2) * var(--nk-proporcao));
+  --nk-sz-4: calc(var(--nk-sz-3) * var(--nk-proporcao));
+  --nk-sz-5: calc(var(--nk-sz-4) * var(--nk-proporcao));
+
+  /* Padronização de Line-Heights (Espaçamento de Linha) */
+  --nk-lh-titulos: 1.2;
+  --nk-lh-textos: 1.5;
+  --nk-lh-longos: 1.6;
+  --nk-lh-compacto: 1.4;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE SINALIZAÇÃO E CLASSES DO FRAMEWORK
+   ========================================================================== */
+
+/* --- 1. ESTRUTURAIS (Cabeçalhos e Divisões) --- */
+.nk-titulo {
+  font-size: var(--nk-sz-5);
+  line-height: var(--nk-lh-titulos);
+  font-weight: 700;
+}
+
+.nk-subtitulo {
+  font-size: var(--nk-sz-4);
+  line-height: var(--nk-lh-titulos);
+  font-weight: 600;
+}
+
+.nk-subtopico {
+  font-size: var(--nk-sz-3);
+  line-height: var(--nk-lh-compacto);
+  font-weight: 600;
+}
+
+.nk-topico-miudo {
+  font-size: var(--nk-sz-2);
+  line-height: var(--nk-lh-compacto);
+  font-weight: 500;
+}
+
+.nk-rotulo-secao {
+  font-size: var(--nk-sz-sm);
+  line-height: var(--nk-lh-compacto);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- 2. LEITURA (Corpo do Texto) --- */
+.nk-texto-destaque {
+  font-size: var(--nk-sz-2);
+  line-height: var(--nk-lh-textos);
+}
+
+.nk-texto {
+  font-size: var(--nk-sz-1);
+  line-height: var(--nk-lh-longos);
+}
+
+.nk-texto-pequeno {
+  font-size: var(--nk-sz-sm);
+  line-height: var(--nk-lh-textos);
+}
+
+/* --- 3. UTILITÁRIOS (UI e Componentes) --- */
+.nk-legenda {
+  font-size: var(--nk-sz-xs);
+  line-height: var(--nk-lh-compacto);
+  opacity: 0.8;
+}
+
+.nk-acao {
+  font-size: var(--nk-sz-sm);
+  line-height: 1;
+  font-weight: 500;
+}
